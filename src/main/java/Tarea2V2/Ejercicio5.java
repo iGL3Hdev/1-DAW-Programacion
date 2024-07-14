@@ -28,6 +28,8 @@ public class Ejercicio5 {
         System.out.println("Dias: " + dias);
         System.out.println("Horas: " + horas);
         System.out.println("Minutos: " + minutos);
+       
+        
         
     }
 

@@ -20,13 +20,13 @@ public class Ejercicio6 {
     
     public static void main(String[] args){
         
-        RazasEjercicio6 var1 = RazasEjercicio6.Caniche;
-        RazasEjercicio6 var2 = RazasEjercicio6.Mastin;
+        Razas var1 = Razas.Caniche;
+        Razas var2 = Razas.Mastin;
         
         System.out.println(var1 == var2);
         System.out.println(var1.getIndex());
         System.out.println(var2.getIndex());
-        System.out.println(RazasEjercicio6.values().length);
+        System.out.println(Razas.values().length);
       
     }
 

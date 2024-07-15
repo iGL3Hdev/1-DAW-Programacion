@@ -26,6 +26,7 @@ public class Ejercicio8 {
         System.out.println("Introduce cuántos alúmnos hay en bases de datos: ");
         int bases = entrada.nextInt();
         
+        
         int total = prog + ent + bases;
         
         double porcProg = (double) (prog*100)/total;

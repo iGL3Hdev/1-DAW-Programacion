@@ -15,8 +15,7 @@ public class Articulo {
         
     }
    
-    public Articulo(String codigo_barra, String denominacion, int unidades, double precio_compra,
-                    int beneficio, double pvp){
+    public Articulo(String codigo_barra, String denominacion, int unidades, double precio_compra, int beneficio){
         this.codigo_barra = codigo_barra;
         this.denominacion = denominacion;
         this.unidades = unidades;
@@ -24,6 +23,7 @@ public class Articulo {
         this.beneficio = beneficio;
         this.calcularPVP();
     }
+
     
     public void setCodigo_barra(String codigo_barra){
         this.codigo_barra = codigo_barra;

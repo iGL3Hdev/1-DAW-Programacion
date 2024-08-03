@@ -25,5 +25,6 @@ public class Principal {
         System.out.println(objFecha2.toString());
         System.out.println(objFecha2.isSummer() ? "Es verano" : "No es verano");
 
+        
     }
 }

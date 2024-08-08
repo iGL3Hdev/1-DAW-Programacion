@@ -1,5 +1,5 @@
 
-package Tarea3V3proyectoPersonaje;
+package Tarea3V3;
 
 import java.util.Scanner;
 

@@ -27,7 +27,7 @@ public class Cliente {
     }
     
     public Cliente(String dni, String nombre, String apellidos, String direccion,
-            String poblacion, int codigoPostal){
+            String poblacion, int codigoPostal) throws Exception{
         this.dni = dni;
         this.validarDNI();
         this.nombre = nombre;
@@ -88,22 +88,67 @@ public class Cliente {
     
     @Override
     public String toString(){
-        return "Cliente{" + "dni=" + dni + " , nombre= " + nombre + ", apellidos" + apellidos +
+        return "Cliente{" + "dni=" + dni + " , nombre= " + nombre + ", apellidos= " + apellidos +
                 " , direccion = " + direccion + " , poblacion= " + poblacion + 
                 
                 " , codigoPostal = " +codigoPostal + ']';
+    }
+    
+    private void validarDNI() throws Exception{
+        Validacion.comprobar_dni(dni);
     }
     
     public boolean existe_DNI(){
         
         Cliente clienteEncontrado = null;
         
-        if(Principal.cliente1 != null && Principal.cliente1.getDNI().equals(this.dni)){
+        if(Principal.cliente1 != null && Principal.cliente1.getDni().equals(this.dni)){
             clienteEncontrado = Principal.cliente1;
+        }else if(Principal.cliente2 != null && Principal.cliente2.getDni().equals(this.dni)){
+            clienteEncontrado = Principal.cliente2;
+        }else if(Principal.cliente3 != null && Principal.cliente3.getDni().equals(this.dni)){
+            clienteEncontrado = Principal.cliente3;
+        }else if(Principal.cliente4 != null && Principal.cliente4.getDni().equals(this.dni)){
+            clienteEncontrado = Principal.cliente4;
+        }else if(Principal.cliente5 != null && Principal.cliente5.getDni().equals(this.dni)){
+            clienteEncontrado = Principal.cliente5;
         }
+        
+        if(clienteEncontrado != null){
+            this.setNombre(clienteEncontrado.getNombre());
+            this.setApellidos(clienteEncontrado.getApellidos());
+            this.setPoblacion(clienteEncontrado.getPoblacion());
+            this.setDireccion(clienteEncontrado.getDireccion());
+            this.setCodigoPostal(clienteEncontrado.getCodigoPostal());
+            return true;
+        }
+        return false;
     }
     
-            
-            
+    public boolean existe_nombre() {
+        Cliente clienteEncontrado = null;
 
+        // Busqueda del cliente
+        if (Principal.cliente1 != null && Principal.cliente1.getNombre().equalsIgnoreCase(this.nombre) && Principal.cliente1.getApellidos().equalsIgnoreCase(this.apellidos)) {
+            clienteEncontrado = Principal.cliente1;
+        } else if (Principal.cliente2 != null && Principal.cliente2.getNombre().equalsIgnoreCase(this.nombre) && Principal.cliente2.getApellidos().equalsIgnoreCase(this.apellidos)) {
+            clienteEncontrado = Principal.cliente2;
+        } else if (Principal.cliente3 != null && Principal.cliente3.getNombre().equalsIgnoreCase(this.nombre) && Principal.cliente3.getApellidos().equalsIgnoreCase(this.apellidos)) {
+            clienteEncontrado = Principal.cliente3;
+        } else if (Principal.cliente4 != null && Principal.cliente4.getNombre().equalsIgnoreCase(this.nombre) && Principal.cliente4.getApellidos().equalsIgnoreCase(this.apellidos)) {
+            clienteEncontrado = Principal.cliente4;
+        } else if (Principal.cliente5 != null && Principal.cliente5.getNombre().equalsIgnoreCase(this.nombre) && Principal.cliente5.getApellidos().equalsIgnoreCase(this.apellidos)) {
+            clienteEncontrado = Principal.cliente5;
+        }
+        
+        if (clienteEncontrado != null) {
+            this.setDni(clienteEncontrado.getDni());
+            this.setPoblacion(clienteEncontrado.getPoblacion());
+            this.setDireccion(clienteEncontrado.getDireccion());
+            this.setCodigoPostal(clienteEncontrado.getCodigoPostal());
+            return true;
+        }
+        return false;
+    }
+    
 }
